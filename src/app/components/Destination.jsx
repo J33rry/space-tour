@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import gsap from "gsap";
+import React, { useEffect, useRef, useState } from "react";
 
 function Destination({ destinations }) {
     const [selectedDestination, setSelectedDestination] = useState(
@@ -8,10 +9,38 @@ function Destination({ destinations }) {
     function HandleClick(item) {
         setSelectedDestination(item);
     }
+    const DestinationRef = useRef(null);
+    const planetRef = useRef(null);
+    useEffect(() => {
+        const document = DestinationRef.current;
+        gsap.fromTo(
+            document,
+            {
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                duration: 0.5,
+                ease: "linear",
+            }
+        );
+        gsap.fromTo(
+            planetRef.current,
+            {
+                opacity: 50,
+            },
+            {
+                opacity: 1,
+                duration: 0.5,
+                ease: "linear",
+            }
+        );
+    }, []);
     return (
         <div
             id="DESTINATION"
-            className="flex-1 py-[48px] px-[165px] overflow-hidden w-screen"
+            ref={DestinationRef}
+            className="flex-1 py-[48px] px-[165px] overflow-hidden w-screen opacity-100"
         >
             <div className="flex font-barlow text-[28px] tracking-[4px] gap-[24px]">
                 <div className="font-bold tracking-[4.72px] text-white opacity-25">
@@ -27,7 +56,10 @@ function Destination({ destinations }) {
                         className=" size-[480px]"
                     />
                 </div>
-                <div className="flex-1/2 px-[47px] py-[133px] flex flex-col gap-[40px]">
+                <div
+                    className="flex-1/2 px-[47px] py-[133px] flex flex-col gap-[40px]"
+                    ref={planetRef}
+                >
                     <div className="flex gap-[32px] font-barlow">
                         {destinations.map((item, index) => (
                             <div

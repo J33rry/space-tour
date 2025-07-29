@@ -1,10 +1,29 @@
-import React from "react";
+"use client";
+import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
 
 function HomePage() {
+    const HomeRef = useRef(null);
+    useEffect(() => {
+        const document = HomeRef.current;
+        gsap.fromTo(
+            document,
+            {
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                duration: 0.5,
+                ease: "linear",
+            }
+        );
+    }, []);
+
     return (
         <div
             id="HOME"
-            className="h-auto w-screen bg-cover px-[165px] py-[128px] flex-1"
+            ref={HomeRef}
+            className="h-auto w-screen bg-cover px-[165px] py-[128px] flex-1 opacity-100"
         >
             <div className="flex w-[100%] h-[100%] justify-between items-end gap-[30px]">
                 <div className="flex-1/2">
