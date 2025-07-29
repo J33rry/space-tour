@@ -11,7 +11,7 @@ function Destination({ destinations }) {
     return (
         <div
             id="DESTINATION"
-            className="flex-1 py-[48px] px-[165px] h-screen w-screen overflow-hidden"
+            className="flex-1 py-[48px] px-[165px] overflow-hidden w-screen"
         >
             <div className="flex font-barlow text-[28px] tracking-[4px] gap-[24px]">
                 <div className="font-bold tracking-[4.72px] text-white opacity-25">

@@ -31,9 +31,13 @@ export default function Home() {
             <Navbar nav={nav} current={current} setCurrent={setCurrent} />
 
             {current === "HOME" && <HomePage />}
-            {current === "DESTINATION" && <Destination destinations={data.destinations} />}
-            {current === "CREW" && <Crew />}
-            {current === "TECHNOLOGY" && <Technology />}
+            {current === "DESTINATION" && (
+                <Destination destinations={data.destinations} />
+            )}
+            {current === "CREW" && <Crew crew={data.crew} />}
+            {current === "TECHNOLOGY" && (
+                <Technology technology={data.technology} />
+            )}
             {/* <HomePage /> */}
         </div>
     );
