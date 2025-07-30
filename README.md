@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/space-tour-with-nextjs-and-tailwindcss-_Fmxu9o6-P)
+-   Live Site URL: [Space Tour](https://space-tour-eight.vercel.app/)
 
 ## My process
 
