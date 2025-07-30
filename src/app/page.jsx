@@ -38,7 +38,6 @@ export default function Home() {
             {current === "TECHNOLOGY" && (
                 <Technology technology={data.technology} />
             )}
-            {/* <HomePage /> */}
         </div>
     );
 }
